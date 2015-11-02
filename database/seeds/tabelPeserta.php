@@ -11,7 +11,7 @@ class tabelPeserta extends Seeder
      */
     public function run()
     {
-        DB::table('peserta')->delete();
+        DB::table('member')->delete();
         $data=[
 ['id'=>null,'namaLengkap'=>'Firdha nur maghfira ','jenisKelamin'=>'Perempuan','nomorHp'=>'08976311824','jurusan'=>'Teknologi Infomasi/ Manejemen Informatika/2','divisi'=>'Sistem Informasi','created_at'=>null,'updated_at'=>null],
 ['id'=>null,'namaLengkap'=>'ERVINA APRILIA SAPUTRI','jenisKelamin'=>'Perempuan','nomorHp'=>'085817353171','jurusan'=>'Teknologi Informasi','divisi'=>'Sistem Informasi','created_at'=>null,'updated_at'=>null],
@@ -87,7 +87,7 @@ class tabelPeserta extends Seeder
 ['id'=>null,'namaLengkap'=>'Fajar Ariadi','jenisKelamin'=>'Laki-Laki','nomorHp'=>'0085745789910','jurusan'=>'Teknologi Informasi/Manajemen Informatika/1','divisi'=>'Multimedia','created_at'=>null,'updated_at'=>null],
 ['id'=>null,'namaLengkap'=>'Sapta Ahmad Afrizal','jenisKelamin'=>'Laki-Laki','nomorHp'=>'0085735538263','jurusan'=>'Teknologi Informasi/Manajemen Informatika/1','divisi'=>'Multimedia','created_at'=>null,'updated_at'=>null]];
 
-DB::table('peserta')->insert($data);
+DB::table('member')->insert($data);
     }
 
 }

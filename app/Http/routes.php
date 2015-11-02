@@ -14,4 +14,4 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('peserta','admin\peserta');
+Route::resource('member','admin\member');

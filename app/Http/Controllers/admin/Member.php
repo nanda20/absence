@@ -7,7 +7,7 @@ use App\Http\Requests;
 use App\model\modelMember;
 use App\Http\Controllers\Controller;
 
-class peserta extends Controller
+class Member extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -60,7 +60,7 @@ class peserta extends Controller
      */
     public function edit($id)
     {
-        
+        //
     }
 
     /**
