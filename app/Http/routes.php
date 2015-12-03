@@ -14,4 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('member','admin\member');
+Route::resource('member','admin\Member@index');
+
+
+

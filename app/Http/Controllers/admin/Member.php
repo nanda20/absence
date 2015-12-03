@@ -4,7 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\model\modelMember;
+use App\modelMember;
 use App\Http\Controllers\Controller;
 
 class Member extends Controller
@@ -18,6 +18,9 @@ class Member extends Controller
     {
         $data= modelMember::all();
         return response()->json($data);
+        
+
+
     }
 
     /**

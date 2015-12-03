@@ -1,11 +1,10 @@
 <?php
 
-namespace App\model;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
 class modelMember extends Model
 {
-    protected $table ="member";
-
+    protected $table="member";
 }
