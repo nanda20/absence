@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
-
+use DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -20,7 +20,17 @@ class adminAbsence extends Controller
     }
 
     public function login(Request $request){
-        var_dump($request->all());
+        $data=$request->all();
+
+        $data = DB::table('petugas')
+                ->where('petugas.username','=',$data['username'])
+                ->where('petugas.password','=',$data['password'])
+                ->get();
+        if($data){
+            
+        }else{
+            echo "login Gagal!";
+        }
         
     }
 
