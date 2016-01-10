@@ -11,10 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::resource('member','admin\Member@index');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/','page\Awal@index');
+Route::post('/','page\Awal@absence');
+Route::resource('admin','admin\adminAbsence');
+Route::post('/admin','admin\adminAbsence@login');
+// Route::get('admin\member\getData','member@getData')
+// Route::resource('member','admin\Member');
 
 
 

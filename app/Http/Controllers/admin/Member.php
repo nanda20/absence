@@ -16,14 +16,15 @@ class Member extends Controller
      */
     public function index()
     {
-        $data= modelMember::all();
-        return response()->json($data);
-        
-
+    
 
     }
 
-    /**
+    public function getData(){
+        $data= modelMember::all();
+        return response()->json($data);
+    }
+        /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
