@@ -4,9 +4,11 @@ namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use DB;
+use App\modelAbsence;
+ 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Support\Facades\Facade;
 class adminAbsence extends Controller
 {
     /**
@@ -27,14 +29,49 @@ class adminAbsence extends Controller
                 ->where('petugas.password','=',$data['password'])
                 ->get();
         if($data){
-            
+          Session::flash('flash_type', 'alert-success');
+    
+        return $this->tampil();           
         }else{
             echo "login Gagal!";
         }
         
     }
 
+    public function tampil(){
+         $absence=$this->getAbsence("","");
 
+         return view('admin.showAbsence',compact('absence'));
+
+    }
+    public function getAbsence($tahun,$bulan){
+        $date1= $tahun."-0".$bulan."-01";
+        $date2= $tahun."-0".$bulan."-30";
+        $data="";
+        if($bulan !=""){
+            $data= DB::table('absence')
+            ->join('mahasiswa','absence.nim','=','mahasiswa.nim')
+            ->join('jurusan','mahasiswa.jurusan_id','=','jurusan.jurusan_id')
+            ->whereBetween('absence.tanggal',[$date1,$date2])
+            ->orderBy('absence.tanggal', 'asc')
+            ->get();        
+        }else{
+            $data= DB::table('absence')
+            ->join('mahasiswa','absence.nim','=','mahasiswa.nim')
+            ->join('jurusan','mahasiswa.jurusan_id','=','jurusan.jurusan_id')
+            ->orderBy('absence.tanggal', 'asc')
+            ->get();        
+        }   
+        
+        return $data;
+    }
+    public function filter(Request $request){
+        $data=$request->all();
+        // echo $data['tahun']."-0".$data['bulan'];
+        $absence=$this->getAbsence($data['tahun'],$data['bulan']);
+        // var_dump($absence);
+        return view('admin.showAbsence',compact('absence'));
+    }
 
     /**
      * Show the form for creating a new resource.

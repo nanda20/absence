@@ -16,10 +16,12 @@
 // });
 Route::get('/','page\Awal@index');
 Route::post('/','page\Awal@absence');
-Route::resource('admin','admin\adminAbsence');
-Route::post('/admin','admin\adminAbsence@login');
-// Route::get('admin\member\getData','member@getData')
-// Route::resource('member','admin\Member');
+Route::resource('adminAbsence','admin\adminAbsence');
+Route::resource('adminPetugas','admin\adminPetugas');
+Route::get('/adminAbsence','admin\adminAbsence@index');
+Route::post('/adminAbsence','admin\adminAbsence@login');
+Route::get('/absence','admin\adminAbsence@tampil');
+Route::post('/absence','admin\adminAbsence@filter');
 
 
 

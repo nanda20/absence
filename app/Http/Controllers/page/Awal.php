@@ -19,27 +19,28 @@ class Awal extends Controller
 	}
 	public function absence(Request $requests){
 		 $nim=$requests->input_nip;
-
+		 	 
 		 if($data=modelMahasiswa::find($nim)){
-		 	$this->insertAbsence($data->nim);
+		 	$this->insertAbsence($data->nim,$requests['pesan']);
 		 	echo "Absen Berhasil Absen !";
-		 	return $this->index();
+		 	return redirect()->action('page\Awal@index');
 		 }else{
 		 	return view('mhs\index');
 		 }
 
 		
 	}
-	function insertAbsence($nim){
+	function insertAbsence($nim,$pesan){
 		$data=array(
 			"nim"=>$nim,
-			"tanggal"=>date("Y-m-d")
+			"tanggal"=>date("Y-m-d"),
+			"pesan"=>$pesan
 			);
 		modelAbsence::create($data);
 	}
 
 	function getAbsence(){
-		$count=DB::table('absence')->count();
+		$count=DB::table('absence')->where('absence.tanggal',date('Y-m-d'))->count();
 		
 		$data=array('jml'=> $count,
 					'jml_ti'=>$this->getAbsenceByJur(1),
