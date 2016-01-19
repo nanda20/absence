@@ -20,7 +20,8 @@
 	</tr>
 	<tr>
 
-	<td colspan="2">{!! Form::submit('Insert')!!}</td>
+	<td colspan="2"><input type="submit" class="btn btn-primary" value="INSERT">
+</td>
 
 	{!! Form::close() !!}
 <!-- <input type="button" value="kirim"> -->

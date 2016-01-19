@@ -21,6 +21,7 @@ Route::resource('adminPetugas','admin\adminPetugas');
 Route::get('/adminAbsence','admin\adminAbsence@index');
 Route::post('/adminAbsence','admin\adminAbsence@login');
 Route::get('/absence','admin\adminAbsence@tampil');
+Route::get('/adminChart','admin\adminAbsence@chart');
 Route::post('/absence','admin\adminAbsence@filter');
 
 

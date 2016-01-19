@@ -20,13 +20,20 @@
 	
 	<nav id="primary_nav_wrap">
 		<ul>
-	  		<li><a href="#">Home</a></li>
-	  		<li><a href="#absence" >Absence</a></li>
-	  		<li><a href="adminAbsence" >Admin</a></li>
+	  		<li><a href="#">HOME</a></li>
+	  		<li><a href="#absence" >ABSENCE</a></li>
+	  		<li><a href="adminAbsence" >ADMIN</a></li>
 		</ul>
 	</nav>
 	</div>
+
 	<div id="slider">
+		<span id="text1">
+					WELCOME.
+				</span>
+				<span id="text2">
+				RUANG BACA - TEKNOLOGI INFORMASI &nbsp
+				</span>
 		<div class="slides">
 			<div id="slideshow">
 	   			<div>

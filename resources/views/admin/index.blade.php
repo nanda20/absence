@@ -26,6 +26,7 @@
 	<div class="nav">
       <ul>
         <li class="home"><a href="{{ URL::to('/absence') }}">Absence</a></li>
+        <li class="home"><a href="{{ URL::to('/adminChart') }}">Chart</a></li>
         <li class="about"><a href="{{ URL::to('/adminPetugas') }}">Petugas</a></li>
         <li class="news"><a href="{{ URL::Route('adminPetugas.create') }}">Tambah Petugas</a></li>
         <li class="l"><a href="{{ URL::to('/adminAbsence') }}">Logout</a></li>
@@ -36,8 +37,7 @@
 	<div class="box">
 	@yield('content')
 	</div>
-	<!-- <div id="footer1">
-	 --></div>
+	</div>
  	
 </body>
 </html>

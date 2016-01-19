@@ -5,10 +5,10 @@ namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use DB;
 use App\modelAbsence;
- 
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Facade;
+
 class adminAbsence extends Controller
 {
     /**
@@ -24,16 +24,16 @@ class adminAbsence extends Controller
     public function login(Request $request){
         $data=$request->all();
 
-        $data = DB::table('petugas')
+        $petugas = DB::table('petugas')
                 ->where('petugas.username','=',$data['username'])
                 ->where('petugas.password','=',$data['password'])
                 ->get();
-        if($data){
-          Session::flash('flash_type', 'alert-success');
-    
-        return $this->tampil();           
+        if($petugas){
+        session(['id'=>$petugas['0']->id]);
+        return $this->tampil();
         }else{
-            echo "login Gagal!";
+
+        return redirect('/adminAbsence');
         }
         
     }
@@ -71,6 +71,9 @@ class adminAbsence extends Controller
         $absence=$this->getAbsence($data['tahun'],$data['bulan']);
         // var_dump($absence);
         return view('admin.showAbsence',compact('absence'));
+    }
+    function chart(){
+        return view('admin/chart');
     }
 
     /**

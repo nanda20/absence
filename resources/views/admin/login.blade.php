@@ -2,6 +2,7 @@
 <html>
 <head>
 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="http://localhost/absence/bootstrap/format.css" >
 <meta charset="UTF-8">
 
 <title>Elegant Login - Designscrazed</title>
@@ -128,6 +129,41 @@ body {
   background: rgba(34,34,34,0.55);
 }
 
+.box1{
+  padding: 10px;
+  width: 400px;
+  height: auto;
+  margin-top: 80px;
+  margin-left: 450px;
+    -webkit-animation: play 1s ease-out;
+            animation: play 1s ease-out;
+} 
+
+@-webkit-keyframes play {
+   from { margin-top: 0px;
+      opacity: 0.1;
+      
+    }
+     to { margin-top: 80px;
+      opacity:1}
+}
+
+@-moz-keyframes play {
+ from { margin-top: 0px;
+      opacity: 0.1
+    }
+     to { margin-top: 80px;
+      opacity:1}
+}
+ 
+@keyframes play {
+   from { margin-top: 0px;
+      opacity: 0.1
+    }
+     to { margin-top: 80px;
+      opacity:1}
+}
+
 </style>
 </head>
 
@@ -137,7 +173,8 @@ body {
 
     <div id="search-bg"></div>
     <div id="search">
-<div class="login-block">
+      <div class="box1">
+    <div class="login-block">
     <h1>LOGIN</h1>
     <form action="" method="POST">
     <input type="text" value="" placeholder="Username" id="username" name="username" />
@@ -145,6 +182,7 @@ body {
     <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
     <button>Submit</button>
 	</form>
+</div>
     </div>
   </div>
 
